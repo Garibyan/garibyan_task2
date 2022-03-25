@@ -1,11 +1,14 @@
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-class Point(var x: Int, var y: Int) {
+class Point(override var x: Int, override var y: Int): Figure{
+
+
 
     override fun toString(): String {
         return "x equals $x \ny equals $y"
     }
+
 
     override fun equals(other: Any?): Boolean {
         if (other is Point) {
@@ -14,13 +17,13 @@ class Point(var x: Int, var y: Int) {
         return false
     }
 
-    fun symmetricalTransfer(): Point {
+    override fun symmetricalTransfer(): Point {
         x *= -1
         y *= -1
         return this
     }
 
-    fun distance(point: Point): Double {
+    override fun distance(point: Point): Double {
         if (x == point.x) return abs(y - point.y).toDouble()
         else if (y == point.y) return abs(x - point.x).toDouble()
         else return sqrt(
