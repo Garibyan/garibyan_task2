@@ -1,6 +1,6 @@
 interface Figure {
-    var x: Int
-    var y: Int
+    var x: Double
+    var y: Double
     fun symmetricalTransfer(): Point
     fun distance(point: Point): Double
 }

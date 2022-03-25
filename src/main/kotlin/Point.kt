@@ -1,7 +1,7 @@
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-class Point(override var x: Int, override var y: Int): Figure{
+class Point(override var x: Double, override var y: Double): Figure{
 
 
 
@@ -24,11 +24,11 @@ class Point(override var x: Int, override var y: Int): Figure{
     }
 
     override fun distance(point: Point): Double {
-        if (x == point.x) return abs(y - point.y).toDouble()
-        else if (y == point.y) return abs(x - point.x).toDouble()
+        if (x == point.x) return abs(y - point.y)
+        else if (y == point.y) return abs(x - point.x)
         else return sqrt(
-            Math.pow((x - point.x).toDouble(), 2.0) +
-                    Math.pow((y - point.y).toDouble(), 2.0)
+            Math.pow((x - point.x), 2.0) +
+                    Math.pow((y - point.y), 2.0)
         )
     }
 }
